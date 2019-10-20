@@ -1,6 +1,8 @@
 package com.ruoyi.system.mapper;
 
 import com.ruoyi.system.domain.SysConfig;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +11,7 @@ import java.util.List;
  *
  * @author ruoyi
  */
+@Repository
 public interface SysConfigMapper {
     /**
      * 查询参数配置信息

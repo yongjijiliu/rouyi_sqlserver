@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.Date;
 
@@ -52,4 +54,102 @@ public class SysUserOnline extends BaseEntity {
 
     @ApiModelProperty(value="在线状态",name="status",example="ON_LINE")
     private OnlineStatus status = OnlineStatus.ON_LINE;
+
+
+    public SysUserOnline() {
+        this.status = OnlineStatus.ON_LINE;
+    }
+
+    public String getSessionId() {
+        return this.sessionId;
+    }
+
+    public void setSessionId(String sessionId) {
+        this.sessionId = sessionId;
+    }
+
+    public String getDeptName() {
+        return this.deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getLoginName() {
+        return this.loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public String getIpaddr() {
+        return this.ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr;
+    }
+
+    public String getLoginLocation() {
+        return this.loginLocation;
+    }
+
+    public void setLoginLocation(String loginLocation) {
+        this.loginLocation = loginLocation;
+    }
+
+    public String getBrowser() {
+        return this.browser;
+    }
+
+    public void setBrowser(String browser) {
+        this.browser = browser;
+    }
+
+    public String getOs() {
+        return this.os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public Date getStartTimestamp() {
+        return this.startTimestamp;
+    }
+
+    public void setStartTimestamp(Date startTimestamp) {
+        this.startTimestamp = startTimestamp;
+    }
+
+    public Date getLastAccessTime() {
+        return this.lastAccessTime;
+    }
+
+    public void setLastAccessTime(Date lastAccessTime) {
+        this.lastAccessTime = lastAccessTime;
+    }
+
+    public Long getExpireTime() {
+        return this.expireTime;
+    }
+
+    public void setExpireTime(Long expireTime) {
+        this.expireTime = expireTime;
+    }
+
+    public OnlineStatus getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(OnlineStatus status) {
+        this.status = status;
+    }
+
+    public String toString() {
+        return (new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)).append("sessionId", this.getSessionId()).append("loginName", this.getLoginName()).append("deptName", this.getDeptName()).append("ipaddr", this.getIpaddr()).append("loginLocation", this.getLoginLocation()).append("browser", this.getBrowser()).append("os", this.getOs()).append("status", this.getStatus()).append("startTimestamp", this.getStartTimestamp()).append("lastAccessTime", this.getLastAccessTime()).append("expireTime", this.getExpireTime()).toString();
+    }
+
 }

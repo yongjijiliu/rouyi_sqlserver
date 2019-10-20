@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * 角色表 sys_role
@@ -53,4 +55,92 @@ public class SysRole extends BaseEntity {
 
     @ApiModelProperty(value="部门组",name="deptIds",hidden = true)
     private Long[] deptIds;
+
+
+    public Long getRoleId() {
+        return this.roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getDataScope() {
+        return this.dataScope;
+    }
+
+    public void setDataScope(String dataScope) {
+        this.dataScope = dataScope;
+    }
+
+    public String getRoleName() {
+        return this.roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
+
+    public String getRoleKey() {
+        return this.roleKey;
+    }
+
+    public void setRoleKey(String roleKey) {
+        this.roleKey = roleKey;
+    }
+
+    public String getRoleSort() {
+        return this.roleSort;
+    }
+
+    public void setRoleSort(String roleSort) {
+        this.roleSort = roleSort;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public String getDelFlag() {
+        return this.delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isFlag() {
+        return this.flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public Long[] getMenuIds() {
+        return this.menuIds;
+    }
+
+    public void setMenuIds(Long[] menuIds) {
+        this.menuIds = menuIds;
+    }
+
+    public Long[] getDeptIds() {
+        return this.deptIds;
+    }
+
+    public void setDeptIds(Long[] deptIds) {
+        this.deptIds = deptIds;
+    }
+
+    public String toString() {
+        return (new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)).append("roleId", this.getRoleId()).append("roleName", this.getRoleName()).append("roleKey", this.getRoleKey()).append("roleSort", this.getRoleSort()).append("dataScope", this.getDataScope()).append("status", this.getStatus()).append("delFlag", this.getDelFlag()).append("createBy", this.getCreateBy()).append("createTime", this.getCreateTime()).append("updateBy", this.getUpdateBy()).append("updateTime", this.getUpdateTime()).append("remark", this.getRemark()).toString();
+    }
+
+
+
 }

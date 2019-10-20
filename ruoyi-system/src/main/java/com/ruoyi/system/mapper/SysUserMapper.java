@@ -3,12 +3,14 @@ package com.ruoyi.system.mapper;
 import java.util.List;
 
 import com.ruoyi.system.domain.SysUser;
+import org.springframework.stereotype.Repository;
 
 /**
  * 用户表 数据层
  *
  * @author ruoyi
  */
+@Repository
 public interface SysUserMapper {
     /**
      * 根据条件分页查询用户列表

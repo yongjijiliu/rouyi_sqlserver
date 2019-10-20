@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 /**
  * 岗位表 sys_post
@@ -40,4 +42,64 @@ public class SysPost extends BaseEntity {
 
     @ApiModelProperty(value="用户是否存在此岗位标识",name="flag",example="0")
     private boolean flag = false;
+
+
+
+    public SysPost() {
+    }
+
+    public Long getPostId() {
+        return this.postId;
+    }
+
+    public void setPostId(Long postId) {
+        this.postId = postId;
+    }
+
+    public String getPostCode() {
+        return this.postCode;
+    }
+
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
+
+    public String getPostName() {
+        return this.postName;
+    }
+
+    public void setPostName(String postName) {
+        this.postName = postName;
+    }
+
+    public String getPostSort() {
+        return this.postSort;
+    }
+
+    public void setPostSort(String postSort) {
+        this.postSort = postSort;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public boolean isFlag() {
+        return this.flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
+
+    public String toString() {
+        return (new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)).append("postId", this.getPostId()).append("postCode", this.getPostCode()).append("postName", this.getPostName()).append("postSort", this.getPostSort()).append("status", this.getStatus()).append("createBy", this.getCreateBy()).append("createTime", this.getCreateTime()).append("updateBy", this.getUpdateBy()).append("updateTime", this.getUpdateTime()).append("remark", this.getRemark()).toString();
+    }
+
+
+
 }

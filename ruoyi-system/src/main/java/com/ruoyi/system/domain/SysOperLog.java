@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.Date;
 
@@ -78,4 +80,127 @@ public class SysOperLog extends BaseEntity {
     @Excel(name = "操作时间", width = 30, dateFormat = "yyyy-MM-dd HH:mm:ss")
     @ApiModelProperty(value="操作时间",name="operTime",example="2018-12-15 18:03:58",dataType="java.util.Date")
     private Date operTime;
+
+
+
+    public SysOperLog() {
+    }
+
+    public Long getOperId() {
+        return this.operId;
+    }
+
+    public void setOperId(Long operId) {
+        this.operId = operId;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public Integer getBusinessType() {
+        return this.businessType;
+    }
+
+    public void setBusinessType(Integer businessType) {
+        this.businessType = businessType;
+    }
+
+    public String getMethod() {
+        return this.method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    public Integer getOperatorType() {
+        return this.operatorType;
+    }
+
+    public void setOperatorType(Integer operatorType) {
+        this.operatorType = operatorType;
+    }
+
+    public String getOperName() {
+        return this.operName;
+    }
+
+    public void setOperName(String operName) {
+        this.operName = operName;
+    }
+
+    public String getDeptName() {
+        return this.deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getOperUrl() {
+        return this.operUrl;
+    }
+
+    public void setOperUrl(String operUrl) {
+        this.operUrl = operUrl;
+    }
+
+    public String getOperIp() {
+        return this.operIp;
+    }
+
+    public void setOperIp(String operIp) {
+        this.operIp = operIp;
+    }
+
+    public String getOperLocation() {
+        return this.operLocation;
+    }
+
+    public void setOperLocation(String operLocation) {
+        this.operLocation = operLocation;
+    }
+
+    public String getOperParam() {
+        return this.operParam;
+    }
+
+    public void setOperParam(String operParam) {
+        this.operParam = operParam;
+    }
+
+    public Integer getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    public String getErrorMsg() {
+        return this.errorMsg;
+    }
+
+    public void setErrorMsg(String errorMsg) {
+        this.errorMsg = errorMsg;
+    }
+
+    public Date getOperTime() {
+        return this.operTime;
+    }
+
+    public void setOperTime(Date operTime) {
+        this.operTime = operTime;
+    }
+
+    public String toString() {
+        return (new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)).append("operId", this.getOperId()).append("title", this.getTitle()).append("businessType", this.getBusinessType()).append("method", this.getMethod()).append("operatorType", this.getOperatorType()).append("operName", this.getOperName()).append("deptName", this.getDeptName()).append("operUrl", this.getOperUrl()).append("operIp", this.getOperIp()).append("operLocation", this.getOperLocation()).append("operParam", this.getOperParam()).append("status", this.getStatus()).append("errorMsg", this.getErrorMsg()).append("operTime", this.getOperTime()).toString();
+    }
+
+
 }

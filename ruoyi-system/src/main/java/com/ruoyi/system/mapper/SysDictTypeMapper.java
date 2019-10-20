@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import com.ruoyi.system.domain.SysDictType;
+import org.springframework.stereotype.Repository;
 
 /**
  * 字典表 数据层
  *
  * @author ruoyi
  */
-@Mapper
+@Repository
 public interface SysDictTypeMapper {
     /**
      * 根据条件分页查询字典类型

@@ -13,6 +13,8 @@ import com.ruoyi.system.service.ISysConfigService;
 import com.ruoyi.system.service.ISysUserService;
 import lombok.extern.slf4j.Slf4j;
 import cn.hutool.core.util.ObjectUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
@@ -388,7 +390,7 @@ public class SysUserServiceImpl implements ISysUserService {
                 failureNum++;
                 String msg = br + failureNum + "、账号 " + user.getLoginName() + " 导入失败：";
                 failureMsg.append(msg).append(e.getMessage());
-                log.error(msg, e);
+                //log.error(msg, e);
             }
         }
         if (failureNum > 0) {

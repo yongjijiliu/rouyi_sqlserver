@@ -49,4 +49,100 @@ public class SysDept extends BaseEntity {
 
     @ApiModelProperty(value="父部门名称",name="parentName",example="涩瑶软件")
     private String parentName;
+
+
+    public SysDept() {
+    }
+
+    public Long getDeptId() {
+        return this.deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public Long getParentId() {
+        return this.parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getAncestors() {
+        return this.ancestors;
+    }
+
+    public void setAncestors(String ancestors) {
+        this.ancestors = ancestors;
+    }
+
+    public String getDeptName() {
+        return this.deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getOrderNum() {
+        return this.orderNum;
+    }
+
+    public void setOrderNum(String orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public String getLeader() {
+        return this.leader;
+    }
+
+    public void setLeader(String leader) {
+        this.leader = leader;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDelFlag() {
+        return this.delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    public String getParentName() {
+        return this.parentName;
+    }
+
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+
+
 }

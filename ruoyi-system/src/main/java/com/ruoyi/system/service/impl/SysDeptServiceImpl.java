@@ -101,7 +101,7 @@ public class SysDeptServiceImpl implements ISysDeptService {
                     .forEach(dept->{
                         Ztree ztree = new Ztree();
                         ztree.setId(dept.getDeptId());
-                        ztree.setPId(dept.getParentId());
+                        ztree.setpId(dept.getParentId());
                         ztree.setName(dept.getDeptName());
                         ztree.setTitle(dept.getDeptName());
                         if (isCheck){

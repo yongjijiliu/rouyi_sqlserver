@@ -4,12 +4,14 @@ import java.util.List;
 
 import com.ruoyi.system.domain.SysUserRole;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * 用户表 数据层
  *
  * @author ruoyi
  */
+@Repository
 public interface SysUserRoleMapper {
     /**
      * 通过用户ID删除用户和角色关联

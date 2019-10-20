@@ -3,12 +3,14 @@ package com.ruoyi.system.mapper;
 import java.util.List;
 
 import com.ruoyi.system.domain.SysRole;
+import org.springframework.stereotype.Repository;
 
 /**
  * 角色表 数据层
  *
  * @author ruoyi
  */
+@Repository
 public interface SysRoleMapper {
     /**
      * 根据条件分页查询角色数据

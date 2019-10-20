@@ -98,6 +98,15 @@ public class SysUser extends BaseEntity {
     private Long[] postIds;
 
     @ApiIgnore
+    public Long getUserId() {
+        return this.userId;
+    }
+    @ApiIgnore
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    @ApiIgnore
     public boolean isAdmin() {
         return isAdmin(this.userId);
     }
@@ -107,7 +116,147 @@ public class SysUser extends BaseEntity {
         return userId != null && 1L == userId;
     }
 
+    public Long getDeptId() {
+        return this.deptId;
+    }
+
+    public void setDeptId(Long deptId) {
+        this.deptId = deptId;
+    }
+
+    public Long getParentId() {
+        return this.parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getLoginName() {
+        return this.loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhonenumber() {
+        return this.phonenumber;
+    }
+
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public String getSex() {
+        return this.sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getAvatar() {
+        return this.avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getSalt() {
+        return this.salt;
+    }
+
+    public void setSalt(String salt) {
+        this.salt = salt;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getDelFlag() {
+        return this.delFlag;
+    }
+
+    public void setDelFlag(String delFlag) {
+        this.delFlag = delFlag;
+    }
+
+    public String getLoginIp() {
+        return this.loginIp;
+    }
+
+    public void setLoginIp(String loginIp) {
+        this.loginIp = loginIp;
+    }
+
+
+
     public SysDept getDept() {
         return dept == null?new SysDept() : dept;
     }
+
+
+    public void setDept(SysDept dept) {
+        this.dept = dept;
+    }
+
+    public List<SysRole> getRoles() {
+        return this.roles;
+    }
+
+    public void setRoles(List<SysRole> roles) {
+        this.roles = roles;
+    }
+
+    public Long[] getRoleIds() {
+        return this.roleIds;
+    }
+
+    public void setRoleIds(Long[] roleIds) {
+        this.roleIds = roleIds;
+    }
+
+    public Long[] getPostIds() {
+        return this.postIds;
+    }
+
+    public void setPostIds(Long[] postIds) {
+        this.postIds = postIds;
+    }
+
+
+
+
+
 }

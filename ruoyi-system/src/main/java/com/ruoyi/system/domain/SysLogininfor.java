@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.Date;
 
@@ -56,4 +58,83 @@ public class SysLogininfor extends BaseEntity {
     @ApiModelProperty(value="访问时间",name="loginTime",example="2018-12-15 18:03:58",dataType="java.util.Date")
     private Date loginTime;
 
+
+    public SysLogininfor() {
+    }
+
+    public Long getInfoId() {
+        return this.infoId;
+    }
+
+    public void setInfoId(Long infoId) {
+        this.infoId = infoId;
+    }
+
+    public String getLoginName() {
+        return this.loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getIpaddr() {
+        return this.ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr;
+    }
+
+    public String getLoginLocation() {
+        return this.loginLocation;
+    }
+
+    public void setLoginLocation(String loginLocation) {
+        this.loginLocation = loginLocation;
+    }
+
+    public String getBrowser() {
+        return this.browser;
+    }
+
+    public void setBrowser(String browser) {
+        this.browser = browser;
+    }
+
+    public String getOs() {
+        return this.os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public String getMsg() {
+        return this.msg;
+    }
+
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
+    public Date getLoginTime() {
+        return this.loginTime;
+    }
+
+    public void setLoginTime(Date loginTime) {
+        this.loginTime = loginTime;
+    }
+
+    public String toString() {
+        return (new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE)).append("infoId", this.getInfoId()).append("loginName", this.getLoginName()).append("ipaddr", this.getIpaddr()).append("loginLocation", this.getLoginLocation()).append("browser", this.getBrowser()).append("os", this.getOs()).append("status", this.getStatus()).append("msg", this.getMsg()).append("loginTime", this.getLoginTime()).toString();
+    }
 }

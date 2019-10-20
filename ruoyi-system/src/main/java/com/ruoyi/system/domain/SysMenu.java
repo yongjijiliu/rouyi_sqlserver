@@ -55,4 +55,98 @@ public class SysMenu extends BaseEntity {
 
     @ApiModelProperty(value="子菜单",name="children",hidden = true)
     private List<SysMenu> children = new ArrayList<>();
+
+
+    public Long getMenuId() {
+        return this.menuId;
+    }
+
+    public void setMenuId(Long menuId) {
+        this.menuId = menuId;
+    }
+
+    public String getMenuName() {
+        return this.menuName;
+    }
+
+    public void setMenuName(String menuName) {
+        this.menuName = menuName;
+    }
+
+    public String getParentName() {
+        return this.parentName;
+    }
+
+    public void setParentName(String parentName) {
+        this.parentName = parentName;
+    }
+
+    public Long getParentId() {
+        return this.parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
+    }
+
+    public String getOrderNum() {
+        return this.orderNum;
+    }
+
+    public void setOrderNum(String orderNum) {
+        this.orderNum = orderNum;
+    }
+
+    public String getUrl() {
+        return this.url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getMenuType() {
+        return this.menuType;
+    }
+
+    public void setMenuType(String menuType) {
+        this.menuType = menuType;
+    }
+
+    public String getVisible() {
+        return this.visible;
+    }
+
+    public void setVisible(String visible) {
+        this.visible = visible;
+    }
+
+    public String getPerms() {
+        return this.perms;
+    }
+
+    public void setPerms(String perms) {
+        this.perms = perms;
+    }
+
+    public String getIcon() {
+        return this.icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
+
+    public List<SysMenu> getChildren() {
+        return this.children;
+    }
+
+    public void setChildren(List<SysMenu> children) {
+        this.children = children;
+    }
+
+
+
+
+
 }

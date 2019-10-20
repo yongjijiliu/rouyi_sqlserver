@@ -28,15 +28,16 @@ public class SysMenuServiceImpl implements ISysMenuService {
 
     private static final String PREMISSION_STRING = "perms[\"{0}\"]" ;
 
-    private final SysMenuMapper menuMapper;
+    private  SysMenuMapper menuMapper;
 
-    private final SysRoleMenuMapper roleMenuMapper;
+    private  SysRoleMenuMapper roleMenuMapper;
 
     @Autowired
     public SysMenuServiceImpl(SysMenuMapper menuMapper, SysRoleMenuMapper roleMenuMapper) {
         this.menuMapper = menuMapper;
         this.roleMenuMapper = roleMenuMapper;
     }
+
 
     /**
      * 根据用户查询菜单
@@ -180,7 +181,7 @@ public class SysMenuServiceImpl implements ISysMenuService {
             menuList.forEach(menu ->{
                 Ztree ztree = new Ztree();
                 ztree.setId(menu.getMenuId());
-                ztree.setPId(menu.getParentId());
+                ztree.setpId(menu.getParentId());
                 ztree.setName(transMenuName(menu, permsFlag));
                 ztree.setTitle(menu.getMenuName());
                 if (isCheck){
