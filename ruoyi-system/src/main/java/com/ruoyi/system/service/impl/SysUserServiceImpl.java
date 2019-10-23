@@ -28,7 +28,6 @@ import java.util.List;
  * @author ruoyi
  */
 @Service
-@Slf4j
 public class SysUserServiceImpl implements ISysUserService {
 
     private final SysUserMapper userMapper;

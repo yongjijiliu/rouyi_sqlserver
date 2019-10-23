@@ -81,4 +81,69 @@ public class OnlineSession extends SimpleSession {
     public void markAttributeChanged() {
         this.attributeChanged = true;
     }
+
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public String getLoginName() {
+        return loginName;
+    }
+
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
+    }
+
+    public String getDeptName() {
+        return deptName;
+    }
+
+    public void setDeptName(String deptName) {
+        this.deptName = deptName;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    public String getBrowser() {
+        return browser;
+    }
+
+    public void setBrowser(String browser) {
+        this.browser = browser;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public void setOs(String os) {
+        this.os = os;
+    }
+
+    public OnlineStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(OnlineStatus status) {
+        this.status = status;
+    }
+
+    public void setAttributeChanged(boolean attributeChanged) {
+        this.attributeChanged = attributeChanged;
+    }
 }

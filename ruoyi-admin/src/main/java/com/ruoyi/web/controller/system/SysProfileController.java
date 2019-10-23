@@ -47,9 +47,9 @@ public class SysProfileController extends BaseController {
     /**
      * 个人信息
      */
-    @GetMapping()
+    @GetMapping("/profile")
     public String profile(ModelMap mmap,SysUser user) {
-        mmap.put("user", user);
+        mmap.put("userinfo", user);
         mmap.put("roleGroup", userService.selectUserRoleGroup(user.getUserId()));
         mmap.put("postGroup", userService.selectUserPostGroup(user.getUserId()));
         return prefix + "/profile";

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" >
 <head>
-	<th:block th:include="include :: header('用户个人信息')" />
+	<th:block th:include="include :: header('个人中心')" />
+    <th:block th:include="include :: select2-css" />
 </head>
 
 <body class="gray-bg" style="font: 14px Helvetica Neue, Helvetica, PingFang SC, 微软雅黑, Tahoma, Arial, sans-serif !important;">
-    <input id="userId" name="userId" type="hidden" th:value="${user.userId}" />
+    <input id="userId" name="userId" type="hidden" th:value="${userinfo.userId}" />
     <section class="section-content">
     <div class="row">
         <div class="col-xs-3 pr5">
@@ -15,29 +16,29 @@
                 </div>
                 <div class="ibox-content">
                     <div class="text-center">
-                        <p><img class="img-circle img-lg" th:src="(${user.avatar} == '') ? @{/img/profile.jpg} : @{/profile/avatar/} + ${user.avatar}"></p>
+                        <p><img class="img-circle img-lg" th:src="(${userinfo.avatar} == '') ? @{/img/profile.jpg} : @{/profile/avatar/} + ${user.avatar}"></p>
                         <p><a href="javascript:avatar()">修改头像</a></p>
                     </div>
                     <ul class="list-group list-group-striped">
                         <li class="list-group-item"><i class="fa fa-user"></i>
                             <b class="font-noraml">登录名称：</b>
-                            <p class="pull-right">[[${user.loginName}]]</p>
+                            <p class="pull-right">[[${userinfo.loginName}]]</p>
                         </li>
                         <li class="list-group-item"><i class="fa fa-phone"></i>
                             <b  class="font-noraml">手机号码：</b>
-                            <p class="pull-right">[[${user.phonenumber}]]</p>
+                            <p class="pull-right">[[${userinfo.phonenumber}]]</p>
                         </li>
                         <li class="list-group-item"><i class="fa fa-group"></i>
                             <b  class="font-noraml">所属部门：</b>
-                            <p class="pull-right" >[[${user.dept?.deptName}]] / [[${#strings.defaultString(postGroup,'无岗位')}]]</p>
+                            <p class="pull-right" >[[${userinfo.dept?.deptName}]] / [[${#strings.defaultString(postGroup,'无岗位')}]]</p>
                         </li>
                         <li class="list-group-item"><i class="fa fa-envelope-o"></i>
                             <b  class="font-noraml">邮箱地址：</b>
-                            <p class="pull-right" >[[${user.email}]]</p>
+                            <p class="pull-right" >[[${userinfo.email}]]</p>
                         </li>
                         <li class="list-group-item"><i class="fa fa-calendar"></i>
                             <b  class="font-noraml">创建时间：</b>
-                            <p class="pull-right" >[[${#dates.format(user.createTime, 'yyyy-MM-dd')}]]</p>
+                            <p class="pull-right" >[[${#dates.format(userinfo.createTime, 'yyyy-MM-dd')}]]</p>
                         </li>
                     </ul>
                 </div>
@@ -57,7 +58,7 @@
                         </ul>
                         <div class="tab-content">
                             <!--用户信息-->
-                            <div class="tab-pane active" id="user_info" th:object="${user}">
+                            <div class="tab-pane active" id="user_info" th:object="${userinfo}">
                                 <form class="form-horizontal" id="form-user-edit">
                                     <!--隐藏ID-->
                                     <input name="id" id="id" type="hidden">
@@ -139,6 +140,7 @@
 	</section>
     
     <th:block th:include="include :: footer" />
+    <th:block th:include="include :: select2-js" />
     <script>
 	    /*用户管理-头像*/
 	    function avatar() {

@@ -1,88 +1,100 @@
 <!DOCTYPE html>
-<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<th:block th:include="include :: header('修改部门')" />
+    <th:block th:include="include :: header('修改部门')"/>
+    <th:block th:include="include :: select2-css"></th:block>
 </head>
 <body class="white-bg">
-	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
-	</div>
-	<th:block th:include="include :: footer" />
-	<script type="text/javascript">
-		var prefix = ctx + "system/dept";
-		
-		$("#form-dept-edit").validate({
-			onkeyup: false,
-			rules:{
-				deptName:{
-					remote: {
-		                url: prefix + "/checkDeptNameUnique",
-		                type: "post",
-		                dataType: "json",
-		                data: {
-		                	"deptId": function() {
-		                        return $("#deptId").val();
-		                    },
-		                    "parentId": function() {
-		                        return $("input[name='parentId']").val();
-		                    },
-		        			"deptName": function() {
-		                        return $.common.trim($("#deptName").val());
-		                    }
-		                },
-		                dataFilter: function(data, type) {
-		                	return $.validate.unique(data);
-		                }
-		            }
-				},
-				orderNum:{
-					digits:true
-				},
-				email:{
-                    email:true,
-        		},
-        		phone:{
-        			isPhone:true,
-        		},
-			},
-			messages: {
-		        "deptName": {
-		            remote: "部门已经存在"
-		        }
-		    },
-		    focusCleanup: true
-		});
-		
-		function submitHandler() {
-	        if ($.validate.form()) {
-	        	$.operate.save(prefix + "/edit", $('#form-dept-edit').serialize());
-	        }
-	    }
-	
-		/*部门管理-修改-选择部门树*/
-		function selectDeptTree() {
-			var deptId = $("#treeId").val();
-			if(deptId > 0) {
-			    var options = {
-					title: '部门选择',
-					width: "380",
-					url: prefix + "/selectDeptTree/" + $("#treeId").val(),
-					callBack: doSubmit
-				};
-				$.modal.openOptions(options);
-			} else {
-        		$.modal.alertError("父部门不能选择");
-        	}
-		}
-		
-		function doSubmit(index, layero){
-			var tree = layero.find("iframe")[0].contentWindow.$._tree;
-			if ($.tree.notAllowLastLevel(tree)) {
-	   			var body = layer.getChildFrame('body', index);
-	   			$("#treeId").val(body.find('#treeId').val());
-	   			$("#treeName").val(body.find('#treeName').val());
-	   			layer.close(index);
-			}
-		}
-	</script>
+<div class="wrapper wrapper-content animated fadeInRight ibox-content">
+
+    <form class="form-horizontal m" id="form-user-edit" th:object="${dept}">
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label ">部门名称：</label>
+            <div class="col-sm-8">
+                <input class="form-control" type="text" readonly="true" th:field="*{deptName}"/>
+            </div>
+        </div>
+    </form>
+</div>
+<th:block th:include="include :: footer"/>
+<th:block th:include="include :: select2-js"></th:block>
+<script type="text/javascript">
+    var prefix = ctx + "system/dept";
+
+    $("#form-dept-edit").validate({
+        onkeyup: false,
+        rules: {
+            deptName: {
+                remote: {
+                    url: prefix + "/checkDeptNameUnique",
+                    type: "post",
+                    dataType: "json",
+                    data: {
+                        "deptId": function () {
+                            return $("#deptId").val();
+                        },
+                        "parentId": function () {
+                            return $("input[name='parentId']").val();
+                        },
+                        "deptName": function () {
+                            return $.common.trim($("#deptName").val());
+                        }
+                    },
+                    dataFilter: function (data, type) {
+                        return $.validate.unique(data);
+                    }
+                }
+            },
+            orderNum: {
+                digits: true
+            },
+            email: {
+                email: true,
+            },
+            phone: {
+                isPhone: true,
+            },
+        },
+        messages: {
+            "deptName": {
+                remote: "部门已经存在"
+            }
+        },
+        focusCleanup: true
+    });
+
+    function submitHandler() {
+        if ($.validate.form()) {
+            $.operate.save(prefix + "/edit", $('#form-dept-edit').serialize());
+        }
+    }
+
+    /*部门管理-修改-选择部门树*/
+    function selectDeptTree() {
+        var deptId = $("#treeId").val();
+        if (deptId > 0) {
+            var options = {
+                title: '部门选择',
+                width: "380",
+                url: prefix + "/selectDeptTree/" + $("#treeId").val(),
+                callBack: doSubmit
+            };
+            $.modal.openOptions(options);
+        } else {
+            $.modal.alertError("父部门不能选择");
+        }
+    }
+
+    function doSubmit(index, layero) {
+        var tree = layero.find("iframe")[0].contentWindow.$._tree;
+        if ($.tree.notAllowLastLevel(tree)) {
+            var body = layer.getChildFrame('body', index);
+            $("#treeId").val(body.find('#treeId').val());
+            $("#treeName").val(body.find('#treeName').val());
+            layer.close(index);
+        }
+    }
+</script>
 </body>
 </html>

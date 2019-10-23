@@ -133,7 +133,7 @@ public class SysUserController extends BaseController {
      */
     @GetMapping("/edit/{userId}")
     public String edit(@PathVariable("userId") Long userId, ModelMap mmap) {
-        mmap.put("user", userService.selectUserById(userId));
+        mmap.put("userinfo", userService.selectUserById(userId));
         mmap.put("roles", roleService.selectRolesByUserId(userId));
         mmap.put("posts", postService.selectPostsByUserId(userId));
         return prefix + "/edit";

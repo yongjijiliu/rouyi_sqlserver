@@ -6,7 +6,7 @@
 </head>
 <body class="white-bg">
 <div class="wrapper wrapper-content animated fadeInRight ibox-content">
-    <form class="form-horizontal m" id="form-user-edit" th:object="${user}">
+    <form class="form-horizontal m" id="form-user-edit" th:object="${userinfo}">
         <input name="userId" type="hidden" th:field="*{userId}"/>
         <input name="deptId" type="hidden" th:field="*{deptId}" id="treeId"/>
         <div class="form-group">
@@ -53,7 +53,7 @@
             <label class="col-sm-3 control-label">状态：</label>
             <div class="col-sm-8">
                 <div class="onoffswitch">
-                    <input type="checkbox" th:checked="${user.status == '0' ? true : false}"
+                    <input type="checkbox" th:checked="${userinfo.status == '0' ? true : false}"
                            class="onoffswitch-checkbox" id="status" name="status">
                     <label class="onoffswitch-label" for="status">
                         <span class="onoffswitch-inner"></span>
@@ -65,11 +65,9 @@
         <div class="form-group">
             <label class="col-sm-3 control-label">岗位：</label>
             <div class="col-sm-8">
-                <select id="post" name="post" class="form-control select2-hidden-accessible" multiple="">
-                    <option th:each="post:${posts}" th:value="${post.postId}" th:text="${post.postName}"
-                            th:selected="${post.flag}" th:disabled="${post.status == '1'}"></option>
+                <select id="post" class="form-control select2-multiple" multiple>
+                    <option th:each="post:${posts}" th:value="${post.postId}" th:text="${post.postName}" th:disabled="${post.status == '1'}"></option>
                 </select>
-
             </div>
         </div>
         <div class="form-group">
@@ -84,7 +82,7 @@
     </form>
 </div>
 <th:block th:include="include :: footer" />
-<script th:src="@{/ajax/libs/select/select2.js}"></script>
+<th:block th:include="include :: select2-js" />
 <script>
     $("#form-user-edit").validate({
         rules: {
