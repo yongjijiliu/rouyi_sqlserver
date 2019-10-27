@@ -25,14 +25,18 @@ import java.util.Set;
 @Slf4j
 public class UserRealm extends AuthorizingRealm {
 
-    @Autowired
-    private ISysMenuService menuService;
+    private final ISysMenuService menuService;
+
+    private final ISysRoleService roleService;
+
+    private final SysLoginService loginService;
 
     @Autowired
-    private ISysRoleService roleService;
-
-    @Autowired
-    private SysLoginService loginService;
+    public UserRealm(ISysMenuService menuService, ISysRoleService roleService, SysLoginService loginService) {
+        this.menuService = menuService;
+        this.roleService = roleService;
+        this.loginService = loginService;
+    }
 
     /**
      * 授权
