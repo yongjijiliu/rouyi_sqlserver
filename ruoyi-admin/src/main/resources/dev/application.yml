@@ -36,6 +36,7 @@ logging:
   level:
     com.ruoyi: debug
     org.springframework: warn
+#  path: /royi/logs
 
 # 用户配置
 user:
@@ -52,7 +53,7 @@ spring:
     mode: HTML5
     encoding: utf-8
     # 禁用缓存
-    cache: false
+    # cache: false
   # 资源信息
   messages:
     # 国际化资源文件路径
@@ -183,6 +184,6 @@ thread:
     maxPoolSize: 100
     corePoolSize: 10
 
-debug: true
+debug: false
 
 

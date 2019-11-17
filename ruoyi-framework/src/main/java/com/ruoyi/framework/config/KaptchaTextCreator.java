@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class KaptchaTextCreator extends DefaultTextCreator {
-    private static final String[] CNUMBERS = "0,1,2,3,4,5,6,7,8,9,10".split(",");
+    private static final String[] CNUMBERS = "11,10,20,100,4,5,6,7,8,9,10".split(",");
 
     private static Random random;
 

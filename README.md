@@ -3,10 +3,11 @@
 [![GitHub Release](https://img.shields.io/github/release/lerry903/RuoYi.svg)](https://github.com/lerry903/RuoYi/releases)
 
 ## 平台简介
-
-一直想做一款后台管理系统，看了很多优秀的开源项目但是发现没有合适的。于是利用空闲休息时间开始自己写了一套后台系统。如此有了若依。她可以用于所有的Web应用程序，如网站管理后台，网站会员中心，CMS，CRM，OA。所有前端后台代码封装过后十分精简易上手，出错概率低。同时支持移动客户端访问。系统会陆续更新一些实用功能。
-
-寓意：你若不离不弃，我必生死相依
+SpringApplication将从以下位置加载application.properties文件，并把它们添加到Spring Environment中：
+当前目录下的/config子目录。
+当前目录。
+classpath下的/config包。
+classpath根路径（root）。
 
 > 
 
@@ -30,52 +31,8 @@
 16. 连接池监视：监视当期系统数据库连接池状态，可进行分析SQL找出系统性能瓶颈。
 17. 服务监控：监视当前系统CPU、内存、磁盘、堆栈等相关信息。
 
-## 源码托管
-> **[Github](https://github.com/lerry903/RuoYi)** | **[Gitee](https://gitee.com/lerry903/RuoYi)**
-  
-## 在线体验
-> admin/admin123
 
-演示地址：http://ruoyi.vip  
 
-文档地址：http://doc.ruoyi.vip
-
-## 演示图
-
-<table>
-    <tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/login.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/index.jpg"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/user_list.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/user_update.jpg"/></td>
-    </tr>
-    <tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/role_list.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/role_update.jpg"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/user_role.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/role_data.jpg"/></td>
-    </tr>	 
-    <tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/function.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/function_update.jpg"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/gen_code.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/user.jpg"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/oper_log.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/login_log.jpg"/></td>
-    </tr>
-	<tr>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/server_monitoring.jpg"/></td>
-        <td><img src="https://raw.githubusercontent.com/lerry903/RuoYi/master/img/prize.jpg"/></td>
-    </tr>
-</table>
 
 ## License
 
