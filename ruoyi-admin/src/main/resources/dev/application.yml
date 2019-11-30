@@ -71,9 +71,9 @@ spring:
     druid:
       # 主库数据源
       master:
-        url: jdbc:mysql://localhost:3306/ry?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=GMT%2B8&zeroDateTimeBehavior=convertToNull&useSSL=true
-        username: root
-        password: CSNT5885
+        url: jdbc:sqlserver://localhost:1433;DatabaseName=ETCIssueDB
+        username: sa
+        password: sssri
       # 从库数据源
       slave:
         # 从数据源开关/默认关闭
@@ -98,7 +98,7 @@ spring:
       # 配置一个连接在池中最大生存的时间，单位是毫秒
       maxEvictableIdleTimeMillis: 900000
       # 配置检测连接是否有效
-      validationQuery: SELECT 1 FROM DUAL
+      validationQuery: SELECT 1
       testWhileIdle: true
       testOnBorrow: false
       testOnReturn: false
@@ -116,7 +116,6 @@ spring:
         wall:
           config:
             multi-statement-allow: true
-
 # MyBatis
 mybatis:
   # 搜索指定包别名
@@ -128,7 +127,7 @@ mybatis:
 
 # PageHelper分页插件
 pagehelper:
-  helperDialect: mysql
+  helperDialect: sqlserver2012
   reasonable: true
   supportMethodsArguments: true
   params: count=countSql

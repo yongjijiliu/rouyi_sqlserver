@@ -72,6 +72,7 @@ public class SysUserOnlineServiceImpl implements ISysUserOnlineService {
      */
     @Override
     public void saveOnline(SysUserOnline online) {
+        userOnlineDao.deleteOnlineById(online.getSessionId());
         userOnlineDao.saveOnline(online);
     }
 

@@ -14,6 +14,6 @@ public class QuartzJobExecution extends AbstractQuartzJob {
     @Override
     protected void doExecute(JobExecutionContext context, SysJob sysJob) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
             InvocationTargetException {
-        JobInvokeUtil.invokeMethod(sysJob);
+        //JobInvokeUtil.invokeMethod(sysJob);
     }
 }

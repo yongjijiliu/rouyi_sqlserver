@@ -22,6 +22,14 @@ public class Config {
   }  
 }  
 
+Druid  
+filters
+属性类型是字符串，通过别名的方式配置扩展插件，常用的插件有：   
+监控统计用的filter:stat  
+日志用的filter:log4j  
+防御sql注入的filter:wall  
 
-
-
+ConfigFilter的作用包括：  
+从配置文件中读取配置  
+从远程http文件中读取配置  
+为数据库密码提供加密功能  

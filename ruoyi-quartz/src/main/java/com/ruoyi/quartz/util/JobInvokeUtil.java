@@ -28,7 +28,8 @@ class JobInvokeUtil {
         String methodName = sysJob.getMethodName();
         String methodParams = sysJob.getMethodParams();
 
-        invokeSpringBean(bean, methodName, methodParams);
+        //注释掉 这暂时不执行 定时任务 会报错
+        //invokeSpringBean(bean, methodName, methodParams);
     }
 
     /**
