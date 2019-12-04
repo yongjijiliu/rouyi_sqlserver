@@ -2,10 +2,11 @@
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" >
 <head>
 	<th:block th:include="include :: header('修改参数')" />
+    <th:block th:include="include :: select2-css" />
 </head>
 <body class="white-bg">
     <div class="wrapper wrapper-content animated fadeInRight ibox-content">
-        <form class="form-horizontal m" id="form-config-edit" th:object="${config}">
+        <form class="form-horizontal m" id="form-config-edit" th:object="${sys_config}">
             <input id="configId" name="configId" th:field="*{configId}"  type="hidden">
             <div class="form-group">	
                 <label class="col-sm-3 control-label">参数名称：</label>
@@ -43,6 +44,7 @@
     	</form>
     </div>
     <th:block th:include="include :: footer" />
+    <th:block th:include="include :: select2-js" />
     <script type="text/javascript">
 	    var prefix = ctx + "system/config";
 	    
